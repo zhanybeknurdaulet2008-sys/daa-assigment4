@@ -1,0 +1,37 @@
+Environment: macOS-14.6-arm64-arm-64bit-Mach-O | arm64
+Python: 3.14.0 | Timer: time.perf_counter
+Seed: 2026 | warm-up: 1 | timed runs: 5
+Timing boundary: only the algorithm call f(request); input generation excluded.
+
+random n=1000 m=100 naive runs: [6e-05, 6e-05, 6e-05, 6e-05, 6e-05] median: 6e-05
+random n=1000 m=100 kmp   runs: [6e-05, 6e-05, 6e-05, 6e-05, 6e-05] median: 6e-05
+random n=1000 m=100 rk    runs: [0.00013, 0.00013, 0.00013, 0.00013, 0.00013] median: 0.00013
+random n=2000 m=200 naive runs: [0.00012, 0.00012, 0.00012, 0.00012, 0.00012] median: 0.00012
+random n=2000 m=200 kmp   runs: [0.00012, 0.00012, 0.00012, 0.00012, 0.00012] median: 0.00012
+random n=2000 m=200 rk    runs: [0.00026, 0.00026, 0.00026, 0.00026, 0.00026] median: 0.00026
+random n=3000 m=300 naive runs: [0.00018, 0.00018, 0.00018, 0.00018, 0.00018] median: 0.00018
+random n=3000 m=300 kmp   runs: [0.00018, 0.00018, 0.00018, 0.00018, 0.00018] median: 0.00018
+random n=3000 m=300 rk    runs: [0.00039, 0.00039, 0.00039, 0.00038, 0.00038] median: 0.00039
+adversarial n=1000 m=100 naive runs: [0.0035, 0.00346, 0.00352, 0.00353, 0.00359] median: 0.00352
+adversarial n=1000 m=100 kmp   runs: [9e-05, 0.0001, 9e-05, 0.0001, 0.0001] median: 0.0001
+adversarial n=1000 m=100 rk    runs: [0.00012, 0.00013, 0.00013, 0.00013, 0.00013] median: 0.00013
+adversarial n=2000 m=200 naive runs: [0.01329, 0.01357, 0.0135, 0.0137, 0.01373] median: 0.01357
+adversarial n=2000 m=200 kmp   runs: [0.00019, 0.00019, 0.00019, 0.00019, 0.00019] median: 0.00019
+adversarial n=2000 m=200 rk    runs: [0.00025, 0.00025, 0.00025, 0.00025, 0.00025] median: 0.00025
+adversarial n=3000 m=300 naive runs: [0.03072, 0.03116, 0.03061, 0.03041, 0.03104] median: 0.03072
+adversarial n=3000 m=300 kmp   runs: [0.0003, 0.0003, 0.0003, 0.0003, 0.0003] median: 0.0003
+adversarial n=3000 m=300 rk    runs: [0.00039, 0.00038, 0.00038, 0.00038, 0.00038] median: 0.00038
+
+Input family: random
+| text n | pattern m | naive median (s) | KMP median (s) | RK median (s) |
+|---|---|---|---|---|
+| 1000 | 100 | 0.00006 | 0.00006 | 0.00013 |
+| 2000 | 200 | 0.00012 | 0.00012 | 0.00026 |
+| 3000 | 300 | 0.00018 | 0.00018 | 0.00039 |
+
+Input family: adversarial
+| text n | pattern m | naive median (s) | KMP median (s) | RK median (s) |
+|---|---|---|---|---|
+| 1000 | 100 | 0.00352 | 0.00010 | 0.00013 |
+| 2000 | 200 | 0.01357 | 0.00019 | 0.00025 |
+| 3000 | 300 | 0.03072 | 0.00030 | 0.00038 |
